@@ -1,6 +1,9 @@
 extends layout
 block content
   h1= title
+  if (toShow == null)
+       h2 No instance to update
+       else
     - let pen_id = toShow._id
     - let pen_name = toShow.pen_name
     - let pen_for = toShow.pen_for
