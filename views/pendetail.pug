@@ -1,0 +1,20 @@
+extends layout
+block content
+  h1= title
+    - let penid = toShow._id
+    - let pen_brand = toShow.pen_brand
+    - let ink_color = toShow.ink_color
+    - let cost = toShow.cost
+    div
+        div.row
+        div(class='penAttr mr-3') pen ID is:
+        div #{penid}
+        div.row
+        div(class='penAttr mr-3')  pen brand is:
+        div #{pen_brand}
+        div.row
+        div(class='penAttr mr-3')  ink is:
+        div #{ink_color}
+        div.row
+        div(class='penAttr mr-3')  Cost is:
+        div #{cost}
