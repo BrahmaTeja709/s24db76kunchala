@@ -3,12 +3,18 @@ extends layout
 block content
   h1= title
   - let items = results
+  - let destinatio = `/pen/create`
+  button.btn( class="btn-primary ml-1", onclick= `dispatch('${destinatio}')`) Create
   div(class="container-fluid")
     div(class="row m-1")
       each item in items
-        - let destination = `/pens/update?id=${item._id}`
+        - let destination = `/pen/update?id=${item._id}`
+        - let destinatin = `/pen/delete?id=${item._id}`
+        - let destinaton = `/pen/detail?id=${item._id}`
         div(class="row-sm-2", class="m-1") Item #{item.pen_brand}(#{item.ink_color}) is #{item.cost}
         button.btn( class="btn-primary ml-1", onclick= `dispatch('${destination}')`) Update
+        button.btn( class="btn-primary ml-1", onclick= `dispatch('${destinatin}')`) delete
+        button.btn( class="btn-primary ml-1", onclick= `dispatch('${destinaton}')`) detail
   script.
     function dispatch(path) {
       window.location.href = path;

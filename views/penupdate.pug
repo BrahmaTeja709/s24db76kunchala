@@ -1,9 +1,10 @@
 extends layout
+
 block content
   h1= title
   if (toShow == null)
-       h2 No instance to update
-       else
+    h2 No instance to update
+  else
     - let pen_id = toShow._id
     - let pen_name = toShow.pen_name
     - let pen_for = toShow.pen_for
@@ -17,12 +18,12 @@ block content
         label.penAttr(for='pen_brand') pen name
         input#pen_brand(type='text', name='pen_brand', value= pen_brand )
       div.form-group
-        label.penAttr(for='ink_color') pen for
+        label.penAttr(for='ink_color') pen ink
         input#ink_color(type='text', name='ink_color', value= ink_color )
       div.form-group
         label.penAttr(for='cost') pen cost
         input#cost(type='number', name='cost', value= cost )
-      input(type="submit")(style="color:red; background-color:yellow;")
+      input(type="submit")
     script.
       document.forms['penForm'].addEventListener('submit', (event) => {
         event.preventDefault();
